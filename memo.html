@@ -1,3 +1,4 @@
+-html-
 <!--href는 anchor: <a>와만 같이 사용 가능하다 -->
 <h1 href="http://naver.com">Hello!</h1>
 <a href="http://google.com">Go to goole.com</a>
@@ -19,3 +20,91 @@
 <body>
 
 </body>
+
+
+
+-css-
+<!--inline 옆에 다른게 올 수 있는 것-->
+<span></span>
+<img src="" alt="">
+<a href=""></a>
+
+<!--block은 옆에 다른게 올 수 없는 것. 위세개의 인라인을 제외하면 대부분 block-->
+<div></div>
+<address></address>
+<p></p>
+
+<!--inline은 높이와 너비가 없음, block은 존재함-->
+
+margin은 box의 border로부터 바깥에 있는 공간
+
+margin: 15px; == 전체에 margin이 15px
+margin: 20px 15px; == 상하 20px, 좌우 15px
+margin: 20px 15px 10px; == 상20px 좌우15px 하10px
+margin: 20px 15px 10px 5px; 상20 우15px 하10px 좌5px (시계방향)
+
+
+똑같은 태그마다 서로 다른 설정 넣기(id 사용!!)
+#을 통해서 id를 가리킬 수 있다
+예시)
+
+<head>
+    <style>
+        #first {
+            margin: 10px;
+            background-color: yellow;
+        }
+
+        #second {
+            margin: 20px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">
+        <div id="second"></div>
+    </div>
+</body>
+
+
+inline은 높이와 너비가 없다. 따라서 위, 아래로 margin을 가질 수 없다.
+다만, 위아래로 padding은 가질 수 있다.
+
+공통적인 속성을 가지는 box들을 class를 통해서 공통적으로 속성을 부여할 수 있다.
+클래스는 id와 달리 개별적인 tag가 아닌 여러 tag들에 공통적인 속성을 부여할 수 있다.
+아이디는 #으로 선언하고 클래스는 .으로 선언한다
+한 tag는 한개의 id만 가질 수 있지만, class는 여러개 가질 수 있다
+예시)
+<head>
+    <style>
+        span{
+            background-color: black;
+        }
+        .tomato {
+            background-color: tomato;
+        }
+        .size{
+            padding: 10px;
+            margin: 5px;
+        }
+        .white-font{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <span class="tomato">tomato</span>
+    <span class="tomato size">tomato</span>  
+    <span class="tomato size font">tomato</span>
+    <span>black</span>
+    <span>black</span>
+    <span>black</span>
+</body>
+
+display:flex를 설정하면 자식 엘리먼트들이 웹 페이지 사이즈에 맞춰 
+자동으로 위치가 포지셔닝된다.
+main axis의 디폴트는 수평 : justify-content
+cross axis의 디폴트는 수직 : cross axis
